@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-//@Constraint(validatedBy = {UserRegisterUniqueEmailMyValidation.class})
+@Constraint(validatedBy = {UserRegisterUniqueEmailMyValidation.class})
 public @interface UserRegisterUniqueEmailMy {
     String message() default "{register.email.unique.validation.constraints.NotNull.message}";
 

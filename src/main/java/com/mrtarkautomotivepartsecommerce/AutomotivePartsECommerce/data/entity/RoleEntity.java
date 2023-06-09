@@ -7,7 +7,7 @@ import java.util.Collection;
 @Data
 @Entity
 @Table(name = "role")
-public class Role {
+public class RoleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "role_id")
