@@ -2,9 +2,10 @@ package com.mrtarkautomotivepartsecommerce.AutomotivePartsECommerce.data.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+
+import javax.persistence.*;
+import java.util.Collection;
+
 @Data
 
 @Entity
@@ -22,4 +23,8 @@ public class UserRegisterEntity extends BaseEntity{
     private String password;
     @Column(name = "users_active",nullable = false)
     private String active;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Collection<UserRegisterEntity> roles;
 }
