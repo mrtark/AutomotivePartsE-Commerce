@@ -1,7 +1,16 @@
 package com.mrtarkautomotivepartsecommerce.AutomotivePartsECommerce.business.dto;
 
-import javax.validation.constraints.NotNull;
+import lombok.*;
+import lombok.extern.log4j.Log4j2;
 
+import javax.validation.constraints.NotNull;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Log4j2
+@Getter
+@Setter
 public class ProductDto {
     private Long id;
     @NotNull(message = "{product.partID.validation.constraints.NotNull.message}")

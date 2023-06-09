@@ -1,12 +1,20 @@
 package com.mrtarkautomotivepartsecommerce.AutomotivePartsECommerce.business.dto;
 
 import com.mrtarkautomotivepartsecommerce.AutomotivePartsECommerce.annotation.UserRegisterUniqueEmailMy;
+import lombok.*;
+import lombok.extern.log4j.Log4j2;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Log4j2
+@Getter
+@Setter
 
 public class UserRegisterDto {
     private Long id;

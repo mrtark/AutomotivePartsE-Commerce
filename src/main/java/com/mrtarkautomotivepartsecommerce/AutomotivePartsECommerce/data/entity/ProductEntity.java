@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Data
+
 @Entity
 @Table(name = "products")
 public class ProductEntity extends BaseEntity{
