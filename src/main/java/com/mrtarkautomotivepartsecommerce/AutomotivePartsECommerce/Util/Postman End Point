@@ -1,0 +1,19 @@
+
+User Create:
+            POST /api/user/v1/createUser HTTP/1.1
+            Host: localhost:8080
+            Content-Type: application/json
+            Content-Length: 183
+
+                {
+                    "id": 5,
+                    "name": "TestN",
+                    "lastname": "TestL",
+                    "email": "test1@gmail.com",
+                    "password": "Test!157",
+                    "active": "Check"
+                }
+
+User List:
+        GET /api/user/v1/userList HTTP/1.1
+        Host: localhost:8080

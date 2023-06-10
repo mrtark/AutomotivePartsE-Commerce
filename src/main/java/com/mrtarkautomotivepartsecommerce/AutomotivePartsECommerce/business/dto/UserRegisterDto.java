@@ -29,7 +29,7 @@ public class UserRegisterDto {
     private  String email;
     @NotNull(message = "{register.password.validation.constraints.NotNull.message}")
     @Size(min = 8)
-    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).*$", message = "{\"{register.password.pattern.validation.constraints.NotNull.message}\"}")
+    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).*$", message = "{register.password.pattern.validation.constraints.NotNull.message}")
     private String password;
     private String active;
 }
