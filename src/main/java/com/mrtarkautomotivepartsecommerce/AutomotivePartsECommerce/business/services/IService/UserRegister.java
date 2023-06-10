@@ -18,9 +18,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-@Log4j2
 @RequiredArgsConstructor
+@Log4j2
 @Service
 public class UserRegister implements IUserRegisterS {
     private final IUserRegisterRepository iUserRegisterRepository;
