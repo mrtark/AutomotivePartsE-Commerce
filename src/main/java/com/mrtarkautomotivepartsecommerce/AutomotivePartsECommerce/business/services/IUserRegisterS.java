@@ -12,11 +12,12 @@ import java.util.Map;
 public interface IUserRegisterS {
     UserRegisterDto EntityToDto(UserRegisterEntity userRegisterEntity);
     UserRegisterEntity DtoToEntity (UserRegisterDto userRegisterDto);
-    ResponseEntity<UserRegisterDto> userRegisterCreate(UserRegisterDto userRegisterDto);
-    ResponseEntity<List<UserRegisterDto>> userRegisterAll();
-    ResponseEntity<?> findUserRegister(Long id);
-    ResponseEntity<Map<String,Boolean>> deleteUser(Long id);
-    ResponseEntity<UserRegisterDto> updateUser(Long id, UserRegisterDto userRegisterDto);
+    UserRegisterDto userRegisterCreate(UserRegisterDto userRegisterDto);
+    List<UserRegisterDto> userRegisterAll();
+    UserRegisterDto findUserRegister(Long id);
+    Map<String,Boolean> deleteUser(Long id);
+    UserRegisterDto updateUser(Long id, UserRegisterDto userRegisterDto);
+    UserRegisterDto searchByEmail(String email);
 
     String getProfile(String name);
     void getAllHeaderData(Map<String,String> header);
