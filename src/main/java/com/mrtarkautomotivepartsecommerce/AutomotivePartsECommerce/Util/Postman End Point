@@ -14,6 +14,29 @@ User Create:
                     "active": "Check"
                 }
 
+
 User List:
         GET /api/user/v1/userList HTTP/1.1
         Host: localhost:8080
+
+
+
+User Update:
+            PUT /api/user/v1/user/5 HTTP/1.1
+            Host: localhost:8080
+            Content-Type: application/json
+            Content-Length: 186
+
+            {
+                "id": 5,
+                "name": "TestN2",
+                "lastname": "TestL2",
+                "email": "test12@gmail.com",
+                "password": "Test!157",
+                "active": "Check"
+            }
+
+
+User Delete:
+            DELETE /api/user/v1/user/5 HTTP/1.1
+            Host: localhost:8080

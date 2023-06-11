@@ -47,9 +47,9 @@ public class UserApi implements IUserApi {
         return null;
     }
 
-    // http://localhost:8080/api/user/v1/createUser
+    // http://localhost:8080/api/user/v1/user
     @Override
-    @PostMapping("/createUser")
+    @PostMapping("/user")
     public ResponseEntity<UserRegisterDto> createUser(@Valid @RequestBody UserRegisterDto userRegisterDto) {
         return ResponseEntity.ok(iUserRegisterS.userRegisterCreate(userRegisterDto));
     }
@@ -61,12 +61,12 @@ public class UserApi implements IUserApi {
         return ResponseEntity.ok(iUserRegisterS.userRegisterAll());
     }
 
-    // http://localhost:8080/api/user/v1/userDel
-    // http://localhost:8080/api/user/v1/userDel/0
-    // http://localhost:8080/api/user/v1/userDel/1
-    // http://localhost:8080/api/user/v1/userDel/-1
+    // http://localhost:8080/api/user/v1/user
+    // http://localhost:8080/api/user/v1/user/0
+    // http://localhost:8080/api/user/v1/user/1
+    // http://localhost:8080/api/user/v1/user/-1
     @Override
-    @GetMapping({"/userDel", "/userDel/{id}"})
+    @GetMapping({"/user", "/user/{id}"})
     public ResponseEntity<?> findUser(@PathVariable(name = "id", required = false) Long id) {
         if (id == null) {
             log.error("404 Not Found!");
@@ -88,10 +88,10 @@ public class UserApi implements IUserApi {
         return ResponseEntity.ok(iUserRegisterS.findUserRegister(id));
     }
 
-    // http://localhost:8080/api/user/v1/userDel/0
+    // http://localhost:8080/api/user/v1/user/0
     @Override
-    @DeleteMapping({"/userDel", "/userDel/{id}"})
-    public ResponseEntity<Map<String, Boolean>> deleteUser(Long id) {
+    @DeleteMapping({"/user", "/user/{id}"})
+    public ResponseEntity<Map<String, Boolean>> deleteUser(@PathVariable(name="id",required = false) Long id) {
         if (id == null) {
             log.error("404 Not Found!");
             return ResponseEntity.notFound().build();
@@ -104,8 +104,9 @@ public class UserApi implements IUserApi {
         return ResponseEntity.ok(iUserRegisterS.deleteUser(id));
     }
 
+    // http://localhost:8080/api/user/v1/user/5
     @Override
-    @PutMapping({"/userUp", "/userUp/{id}"})
+    @PutMapping({"/user", "/user/{id}"})
     public ResponseEntity<UserRegisterDto> updateUser(@PathVariable(name = "id", required = false) Long id,
                                                       @Valid @RequestBody UserRegisterDto userRegisterDto) {
         if (id == null) {
