@@ -3,11 +3,12 @@ package com.mrtarkautomotivepartsecommerce.AutomotivePartsECommerce.data.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 @Data
 @Entity
 @Table(name = "role")
-public class RoleEntity {
+public class RoleEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "role_id")

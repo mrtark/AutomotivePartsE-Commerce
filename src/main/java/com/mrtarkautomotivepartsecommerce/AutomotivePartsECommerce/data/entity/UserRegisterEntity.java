@@ -4,13 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 
 @Data
 
 @Entity
 @Table(name = "users")
-public class UserRegisterEntity extends BaseEntity{
+public class UserRegisterEntity extends BaseEntity implements Serializable {
     public static final long serialVersionUID = 1L;
     @Column(name = "users_name")
     private String name;

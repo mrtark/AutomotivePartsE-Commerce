@@ -5,12 +5,13 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Data
 
 @Entity
 @Table(name = "products")
-public class ProductEntity extends BaseEntity{
+public class ProductEntity extends BaseEntity implements Serializable {
     public static final long serialVersionUID = 1L;
     @Column(name = "part_id")
     private Long partID;

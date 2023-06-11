@@ -7,6 +7,7 @@ import com.mrtarkautomotivepartsecommerce.AutomotivePartsECommerce.error.ApiResu
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -21,6 +22,7 @@ public class ProductApi implements IProductApi {
     private final IProducts iProducts;
 
     // http://localhost:8080/api/product/v1/create
+    @Transactional
     @Override
     @PostMapping("/create")
     public ResponseEntity<ProductDto> createProduct(@Valid @RequestBody ProductDto productDto) {
@@ -71,7 +73,7 @@ public class ProductApi implements IProductApi {
                 iProducts.findProduct(id)+ "\n" + "Deleted!");
         return ResponseEntity.ok(iProducts.deleteProduct(id));
     }
-
+    @Transactional
     @Override
     @PutMapping({"/product", "/product/{id}"})
     public ResponseEntity<ProductDto> updateProduct(@PathVariable(name = "id", required = false) Long id,

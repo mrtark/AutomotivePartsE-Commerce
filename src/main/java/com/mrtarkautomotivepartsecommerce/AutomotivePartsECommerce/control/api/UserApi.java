@@ -8,6 +8,7 @@ import com.mrtarkautomotivepartsecommerce.AutomotivePartsECommerce.error.ApiResu
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -48,6 +49,7 @@ public class UserApi implements IUserApi {
     }
 
     // http://localhost:8080/api/user/v1/user
+    @Transactional
     @Override
     @PostMapping("/user")
     public ResponseEntity<UserRegisterDto> createUser(@Valid @RequestBody UserRegisterDto userRegisterDto) {
@@ -105,6 +107,7 @@ public class UserApi implements IUserApi {
     }
 
     // http://localhost:8080/api/user/v1/user/5
+    @Transactional
     @Override
     @PutMapping({"/user", "/user/{id}"})
     public ResponseEntity<UserRegisterDto> updateUser(@PathVariable(name = "id", required = false) Long id,
