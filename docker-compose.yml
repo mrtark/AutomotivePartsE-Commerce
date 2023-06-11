@@ -1,0 +1,11 @@
+
+version: '1.0'
+
+services:
+  app:
+    container_name: AutomotivePartsE-Commerce.jar
+    image: AutomotivePartsE-Commerce.jar
+    restart: always
+    build: ./
+    ports:
+      - "8080:8080"
