@@ -1,0 +1,45 @@
+
+Product Create:
+                POST /api/product/v1/create HTTP/1.1
+                Host: localhost:8080
+                Content-Type: application/json
+                Content-Length: 399
+
+                    {
+                        "id": 5,
+                        "partID": 112233,
+                        "partName": "TestPartN1",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make",
+                        "partPrice": 299,
+                        "partImage": "link"
+                    }
+
+Product List:
+            GET /api/product/v1/list HTTP/1.1
+            Host: localhost:8080
+
+Product Find ID:
+            GET /api/product/v1/product/5 HTTP/1.1
+            Host: localhost:8080
+
+Product Delete:
+            DELETE /api/product/v1/product/1 HTTP/1.1
+            Host: localhost:8080
+
+Product Update:
+            PUT /api/product/v1/product/2 HTTP/1.1
+            Host: localhost:8080
+            Content-Type: application/json
+            Content-Length: 191
+
+                {
+                    "partID": 55555,
+                    "partName": "TestPart555",
+                    "description": "Lorem Ipsum is simply dummy 55555",
+                    "partPrice": 555,
+                    "partImage": "link"
+                }
+
+Product Dind PartID:
+                GET /api/product/v1/productID/51 HTTP/1.1
+                Host: localhost:8080

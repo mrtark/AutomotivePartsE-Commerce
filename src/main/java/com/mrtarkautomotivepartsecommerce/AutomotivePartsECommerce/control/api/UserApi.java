@@ -91,7 +91,7 @@ public class UserApi implements IUserApi {
     // http://localhost:8080/api/user/v1/user/0
     @Override
     @DeleteMapping({"/user", "/user/{id}"})
-    public ResponseEntity<Map<String, Boolean>> deleteUser(@PathVariable(name="id",required = false) Long id) {
+    public ResponseEntity<Map<String, Boolean>> deleteUser(@PathVariable(name = "id", required = false) Long id) {
         if (id == null) {
             log.error("404 Not Found!");
             return ResponseEntity.notFound().build();
@@ -118,6 +118,16 @@ public class UserApi implements IUserApi {
         }
         log.info("Data With id: [ " + id + " ] Found!" + "\n" +
                 iUserRegisterS.findUserRegister(id));
-        return ResponseEntity.ok(iUserRegisterS.updateUser(id,userRegisterDto));
+        return ResponseEntity.ok(iUserRegisterS.updateUser(id, userRegisterDto));
+    }
+
+    @Override
+    @GetMapping({"/userEmail", "/userEmail/{email}"})
+    public ResponseEntity<UserRegisterDto> emailSearch(@PathVariable(name = "email", required = false)String email) {
+        if (email != null) {
+            return ResponseEntity.ok(iUserRegisterS.searchByEmail(email));
+        }
+        log.error("404 Not Found!");
+        return ResponseEntity.notFound().build();
     }
 }

@@ -40,3 +40,12 @@ User Update:
 User Delete:
             DELETE /api/user/v1/user/5 HTTP/1.1
             Host: localhost:8080
+
+
+User Find ID:
+            GET /api/user/v1/user/2 HTTP/1.1
+            Host: localhost:8080
+
+User Find Email:
+            GET /api/user/v1/userEmail/mail87D9B0E6B7A24@mrtark.com HTTP/1.1
+            Host: localhost:8080

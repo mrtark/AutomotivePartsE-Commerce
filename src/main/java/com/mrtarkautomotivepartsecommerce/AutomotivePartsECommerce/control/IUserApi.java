@@ -22,5 +22,6 @@ public interface IUserApi {
     ResponseEntity<Map<String, Boolean>> deleteUser(Long id);
 
     ResponseEntity<UserRegisterDto> updateUser(Long id, UserRegisterDto userRegisterDto);
+    ResponseEntity<UserRegisterDto> emailSearch(String email);
 
 }
