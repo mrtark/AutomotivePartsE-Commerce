@@ -22,7 +22,7 @@ import java.util.Map;
 public class WebCostumError implements ErrorController {
     private final ErrorAttributes errorAttributes;
     @RequestMapping("/error")
-    ApiResult catchErrors(WebRequest rfwebRequest){
+    public ApiResult catchErrors(WebRequest rfwebRequest){
         ApiResult error;
         int status;
         String message,path;
@@ -36,7 +36,7 @@ public class WebCostumError implements ErrorController {
         path = (String)errAttributes.get("path");
         error = new ApiResult(status,message,path);
 
-        if(errAttributes.containsKey("error")){
+        if(errAttributes.containsKey("errors")){
             List<FieldError> fieldErrorList =(List)errAttributes.get("errors");
             Map<String,String> validationMistakes = new HashMap<>();
             for (FieldError reffieldError: fieldErrorList) {

@@ -60,6 +60,8 @@ public class Product implements IProducts {
         ProductEntity findProductEntity = iProductRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundEx(id + ": Product ID Not Found!")
         );
+        System.out.println(" [ " + findProductEntity + " ] ");
+        log.info(findProductEntity);
         ProductDto dto = EntityToDto(findProductEntity);
         return dto;
     }

@@ -8,7 +8,6 @@ import java.io.Serializable;
 import java.util.Collection;
 
 @Data
-
 @Entity
 @Table(name = "users")
 public class UserRegisterEntity extends BaseEntity implements Serializable {

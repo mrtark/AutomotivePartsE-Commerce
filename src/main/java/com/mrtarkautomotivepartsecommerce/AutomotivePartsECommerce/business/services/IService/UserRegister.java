@@ -26,7 +26,6 @@ public class UserRegister implements IUserRegisterS {
     private final ModelMapperBn modelMapperBn;
     private final PasswordEncodeBn passwordEncodeBn;
 
-
     @Override
     public UserRegisterDto EntityToDto(UserRegisterEntity userRegisterEntity) {
         return modelMapperBn.modelMapperMethod().map(userRegisterEntity, UserRegisterDto.class);
@@ -67,6 +66,7 @@ public class UserRegister implements IUserRegisterS {
         UserRegisterEntity find = iUserRegisterRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundEx(id + ": ID Not Found!"));
         System.out.println(" [ " + find + " ] ");
+        log.info(find);
         UserRegisterDto findDto = EntityToDto(find);
         return findDto;
     }

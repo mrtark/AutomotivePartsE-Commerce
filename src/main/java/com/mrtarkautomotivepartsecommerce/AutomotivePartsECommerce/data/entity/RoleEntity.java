@@ -1,6 +1,7 @@
 package com.mrtarkautomotivepartsecommerce.AutomotivePartsECommerce.data.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,6 +13,7 @@ public class RoleEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "role_id")
+
     private Long id;
 
     @Column(name = "role", unique = true)

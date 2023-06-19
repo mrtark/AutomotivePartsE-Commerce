@@ -20,7 +20,6 @@ import java.util.Map;
 @CrossOrigin(origins = "http://localhost:3000")
 public class ProductApi implements IProductApi {
     private final IProducts iProducts;
-
     // http://localhost:8080/api/product/v1/create
     @Transactional
     @Override
@@ -28,7 +27,6 @@ public class ProductApi implements IProductApi {
     public ResponseEntity<ProductDto> createProduct(@Valid @RequestBody ProductDto productDto) {
         return ResponseEntity.ok(iProducts.createProduct(productDto));
     }
-
     // http://localhost:8080/api/product/v1/list
     @Override
     @GetMapping("/list")
@@ -89,7 +87,6 @@ public class ProductApi implements IProductApi {
                 iProducts.findProduct(id)+ "\n" + "Updated!");
         return ResponseEntity.ok(iProducts.updateProduct(id,productDto));
     }
-
     @Override
     @GetMapping({"/productID", "/productID/{id}"})
     public ResponseEntity<ProductDto> productIdFind(@PathVariable(name = "id", required = false)Long id) {

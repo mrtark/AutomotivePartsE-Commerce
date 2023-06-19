@@ -6,7 +6,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 
 @Data
@@ -33,5 +36,14 @@ public class ApiResult {
         this.status = status;
         this.message = message;
         this.path = path;
+    }
+
+        private  String nowDate() {
+        Locale locale=new Locale("tr","TR");
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd.MMMM.yyyy HH:mm:ss",locale);
+        Date date=new Date();
+        String change=simpleDateFormat.format(date);
+        System.out.println(change);
+        return change;
     }
 }

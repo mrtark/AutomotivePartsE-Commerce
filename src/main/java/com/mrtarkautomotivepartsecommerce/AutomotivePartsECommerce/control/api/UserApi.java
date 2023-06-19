@@ -91,6 +91,7 @@ public class UserApi implements IUserApi {
     }
 
     // http://localhost:8080/api/user/v1/user/0
+    @Transactional
     @Override
     @DeleteMapping({"/user", "/user/{id}"})
     public ResponseEntity<Map<String, Boolean>> deleteUser(@PathVariable(name = "id", required = false) Long id) {
